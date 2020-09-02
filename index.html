@@ -1,0 +1,81 @@
+
+<html>
+  <!-- Internal stylesheet import begin -->
+  <link rel="stylesheet" href="main.css">
+  <!-- Internal stylesheet import end-->
+
+  <!-- Internal JS imports begin -->
+  <script src="survey.js"></script>
+  <!-- Internal JS imports end -->
+
+  <div id='header'> 
+    <IMG SRC="assets/logo2.png" ALT="some text" WIDTH=500 HEIGHT=150>      
+    <h1>How many people will you meet in 2020?</h1>
+  </div> 
+
+  <div id="wrapper">
+    <p> COVID-19 has caused a decrease in social interaction, but by how much?</p>
+    <p>Take this questionnaire to find out!</p>
+    
+    <form id="quiz">
+      <!-- Question 1 -->
+      <h2>Are you extroverted or introverted?</h2>
+      <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
+      <!-- The value is which answer the choice corresponds to. -->
+      <label><input type="radio" name="q1" value="c1">
+        Extroverted
+      </label><br />
+      <label><input type="radio" name="q1" value="c2">
+        Introverted
+      </label><br />  
+      
+      <!-- Question 3 -->
+      <h2>Do you drink coffee?</h2>
+      <!-- Choices for the third question -->
+      <label><input type="radio" name="q2" value="c1">
+        Yes
+      </label><br />
+      <label><input type="radio" name="q2" value="c2">
+        No
+      </label><br />
+      
+      <!-- Question 2 -->
+      <h2>Are you a student?</h2>
+      <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+      <label><input type="radio" name="q3" value="c1">
+        Yes
+      </label><br />
+      <label><input type="radio" name="q3" value="c2">
+        No
+      </label><br />
+      
+      <!-- Question 4 -->
+      <h2>Do you have pets?</h2>
+      <!-- Choices for the fourth question -->
+      <label><input type="radio" name="q4" value="c1">
+        Yes
+      </label><br />
+      <label><input type="radio" name="q4" value="c2">
+        No
+      </label><br />
+
+      <!-- Question 5 -->
+      <h2>Have you listened to The Data Standard Audio Experience?</h2>
+      <!-- Choices for the fourth question -->
+      <label><input type="radio" name="q5" value="c1">
+        Yes
+      </label><br />
+      <label><input type="radio" name="q5" value="c2">
+        No
+      </label><br />
+      
+      <button type="button" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
+      <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+
+    </form>
+
+    <div id="answer">Your result will show up here!</div>
+
+  </div>
+
+</html>
