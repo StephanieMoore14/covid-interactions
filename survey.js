@@ -12,38 +12,48 @@ function tabulateAnswers() {
       // if the radio is checked..
       if (choices[i].checked) {
         
-        if (choices[i].name = 'q1'){ // are you a introverted
+        if (choices[i].name = 'q1'){ // are you a extroverted
           if (choices[i].value == 'c1') {
-            c1score *= .5;
+            c1score *= 1.2;
           }
           if (choices[i].value == 'c2') {
-            c2score *= 1.5;
+            c2score *= .5;
           }
         }
         
-        // if (choices[i].name = 'q2'){ // do you like coffee
-        //   continue;
-        // }
-
-        if (choices[i].name = 'q3'){ // are you a student
+        if (choices[i].name = 'q2'){ // do you network
           if (choices[i].value == 'c1') {
-            c1score *= 2;
+            c1score *= 1.2;
           }
           if (choices[i].value == 'c2') {
-            c2score *= 1.5;
+            c2score *= .5;
           }
         }
 
-        // if (choices[i].name = 'q4'){ // pets
-        //   continue;
-        // }
+        if (choices[i].name = 'q3'){ // are you a student
+          if (choices[i].value == 'c1') {
+            c1score *= 1.2;
+          }
+          if (choices[i].value == 'c2') {
+            c2score *= .7;
+          }
+        }
+
+        if (choices[i].name = 'q4'){ // LinkedIn
+          if (choices[i].value == 'c1') {
+            c1score *= 1.5;
+          }
+          if (choices[i].value == 'c2') {
+            c2score *= .7;
+          }
+        }
 
         if (choices[i].name = 'q5'){ // TDS Listener
           if (choices[i].value == 'c1') {
             c1score *= 1.2;
           }
           if (choices[i].value == 'c2') {
-            c2score *= 1;
+            c2score *= .7;
           }
         }
       }
@@ -64,8 +74,11 @@ function tabulateAnswers() {
     // if (c1score != c2score) {
     //   var maxscore = Math.round(Math.max(c1score,c2score));
     // }
+
+    var c1_val = Math.abs(1095 - c1score); 
+    var c2_val = Math.abs(1095 - c2score);
     
-    var maxscore = Math.round(Math.max(c1score,c2score));
+    var maxscore = Math.round(Math.max(c1_val, c2_val));
 
     // Display answer corresponding to that choice
     var answerbox = document.getElementById('answer');
@@ -87,10 +100,20 @@ function tabulateAnswers() {
   }
 
   
-  // program the reset button
+  // program the reset button --> to refresh page
   function resetAnswer() {
     var answerbox = document.getElementById('answer');
-    answerbox.innerHTML = "Your result will show up here!";
-    var c1score = 1095;
-    var c2score = 1095;
+    // answerbox.innerHTML = "Your result will show up here!";
+    // var c1score = 1095;
+    // var c2score = 1095;
+    // for (i=0; i<choices.length; i++) {
+    //   // if the radio is checked..
+    //   choices[i].checked = false;
+    // }
+    function refreshPage(){ 		
+      location.reload(); 		
+    }
+    
+    refreshPage();
+
   }
