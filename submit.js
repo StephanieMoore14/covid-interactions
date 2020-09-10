@@ -1,11 +1,8 @@
 function sendJSON(){ 
-               
-    let result = document.querySelector('.result'); 
-    let LinkedIn = document.querySelector('#LinkedIn'); 
-    let response = document.querySelector('#response'); 
+ 
 
-    var LinkedIn = localStorage.getItem(link);  // Save Free Response Question
-    var Response = localStorage.getItem(response)
+    var LinkedIn = localStorage.getItem('link');  // Save Free Response Question
+    var Response = localStorage.getItem('response');
        
     // Creating a XHR object 
     let xhr = new XMLHttpRequest(); 

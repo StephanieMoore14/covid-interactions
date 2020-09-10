@@ -25,7 +25,7 @@ function tabulateAnswers() {
 
       if (choices[i].name == 'link') {
         var link = choices[i].value;
-        localStorage.setItem("LinkedIn", link);  // Save Free Response Question
+        localStorage.setItem("link", link);  // Save Free Response Question
       }
       if (choices[i].name == 'feeling') {
         var response = choices[i].value;
@@ -50,7 +50,7 @@ function tabulateAnswers() {
     var answerbox = document.getElementById('answer');
 
     // Create Responses
-    var response = localStorage.getItem('user answer')
+    var response = localStorage.getItem('response') + localStorage.getItem('link');
     if (max_score == 'c1'){ // Extroverted
       response += "You're a star networker! You love to speak to people and networking is your passion.  Continue to build strong networks and relationships.<br><br>";
       response += "Here are some ways you can improve your network: <br>";
