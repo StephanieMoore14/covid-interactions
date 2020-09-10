@@ -6,6 +6,7 @@
 
   <!-- Internal JS imports begin -->
   <script src="survey.js"></script>
+  <script src="GitHubAPIPush.js"></script>
   <!-- Internal JS imports end -->
 
   <div id='header'> 
@@ -19,7 +20,7 @@
     
     <form id="quiz">
       <!-- Question 1 -->
-      <h2>Pre-covid, do you consider yourself an extrovert or introvert?</h2>
+      <h3>Do you consider yourself an extrovert or introvert??</h3>
       <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
       <!-- The value is which answer the choice corresponds to. -->
       <label><input type="radio" name="q1" value="c1">
@@ -28,46 +29,96 @@
       <label><input type="radio" name="q1" value="c2">
         Introvert
       </label><br />  
-      
-      <!-- Question 3 -->
-      <h2>During covid, are you attending waaaaaaayyyy too many virtual networking events?</h2>
-      <!-- Choices for the third question -->
-      <label><input type="radio" name="q2" value="c1">
-        Yes
-      </label><br />
-      <label><input type="radio" name="q2" value="c2">
-        No
-      </label><br />
+      <label><input type="radio" name="q1" value="c3">
+        Somewhere in the middle
+      </label><br />  
       
       <!-- Question 2 -->
-      <h2>During covid, are you now a content creator?</h2>
-      <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+      <h3>During covid, are you attending waaaaaaayyyy too many virtual networking events?</h3>
+      <!-- Choices for the second question -->
+      <label><input type="radio" name="q2" value="c1">
+        Absolutely
+      </label><br />
+      <label><input type="radio" name="q2" value="c2">
+        Not at all
+      </label><br />
+      <label><input type="radio" name="q2" value="c3">
+        Only a few
+      </label><br />
+      
+      <!-- Question 3 -->
+      <h3>Are you a content creator (LinkedIn posts, blog, YouTube, etc)?</h3>
+      <!-- Here are the choices for the third question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
       <label><input type="radio" name="q3" value="c1">
-        Yes
+        YES
       </label><br />
       <label><input type="radio" name="q3" value="c2">
         No
       </label><br />
+      <label><input type="radio" name="q3" value="c3">
+        Occasionally
+      </label><br />
       
       <!-- Question 4 -->
-      <h2>Are you commenting on LinkedIn articles?</h2>
+      <h3>Are you regularly commenting on LinkedIn articles?</h3>
       <!-- Choices for the fourth question -->
       <label><input type="radio" name="q4" value="c1">
         Yes
       </label><br />
       <label><input type="radio" name="q4" value="c2">
-        No
+        No 🙁
+      </label><br />
+      <label><input type="radio" name="q4" value="c3">
+        Only sometimes
       </label><br />
 
       <!-- Question 5 -->
-      <h2>Do you have your camera on in Zoom meetings?</h2>
-      <!-- Choices for the fourth question -->
+      <h3>Do you have your camera on in Zoom meetings?</h3>
+      <!-- Choices for the fifth question -->
       <label><input type="radio" name="q5" value="c1">
-        Yes
+        Yes, I’m just that photogenic
       </label><br />
       <label><input type="radio" name="q5" value="c2">
         No
       </label><br />
+      <label><input type="radio" name="q5" value="c3">
+        Sometimes
+      </label><br />
+
+      <!-- Question 6 -->
+      <h3>How many connections do you have?</h3>
+      <!-- Choices for the sixth question -->
+      <label><input type="radio" name="q6" value="c1">
+        More than 1000
+      </label><br />
+      <label><input type="radio" name="q6" value="c2">
+        Less than 500
+      </label><br />
+      <label><input type="radio" name="q6" value="c3">
+        500 -1000
+      </label><br />
+
+      <!-- Question 7 -->
+      <h3>How do you like the work-from-home environment?</h3>
+      <!-- Choices for the seventh question -->
+      <label><input type="radio" name="q7" value="c1">
+        Not for me
+      </label><br />
+      <label><input type="radio" name="q7" value="c2">
+        Love it!
+      </label><br />
+      <label><input type="radio" name="q7" value="c3">
+        Indifferent
+      </label><br />
+
+      <!--NLP Free Response-->
+      <h3>How are you feeling about your level of social interaction?</h3>
+      LinkedIn URL:
+      <input type="text" name="link"/> 
+      <br>
+      Response: 
+      <input type="text" name="feeling" />
+      <br>
       
       <button type="button" id="submit" onclick="tabulateAnswers()">Submit Your Answers</button>
       <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
