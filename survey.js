@@ -144,7 +144,7 @@ function tabulateAnswers() {
 
 
   response += custom_answer + "<br>";
-  // response += "Bases on your answers " + custom_answer + "<br>";
+  // response += "Based on your answers " + custom_answer + "<br>";
   // response += "Here are some tips to improve your network: <br>";
   // response += custom_advice + "<br>";
   response += "Here are some people you should connect with: ";
@@ -165,6 +165,7 @@ function tabulateAnswers() {
       response += '<br><br>';
     } else if (string == 'Matt Rall') {
       response += string.link("https://www.linkedin.com/in/matthew-rall-7b9b7511/");
+      response += '<br><br>';
     } else if (string == 'Brian Richmond') {
       response += string.link("https://www.linkedin.com/in/brian-richmond/");
       response += '<br><br>';
@@ -205,8 +206,8 @@ function tabulateAnswers() {
       response += string.link("https://www.linkedin.com/in/sanjaybasu/");
       response += '<br><br>';
     } else if (string == 'Vin Vashishta') {
-    response += string.link("https://www.linkedin.com/in/vineetvashishta/");
-    response += '<br><br>';
+      response += string.link("https://www.linkedin.com/in/vineetvashishta/");
+      response += '<br><br>';
     } else if (string == 'Angela Shen-Hsieh') {
       response += string.link("https://www.linkedin.com/in/angelashenhsieh/");
       response += '<br><br>';
