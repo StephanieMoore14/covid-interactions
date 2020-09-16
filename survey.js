@@ -42,52 +42,52 @@ function tabulateAnswers() {
 
     // check responses for questions 2, 3, 4, 5
     // attend virtual events
-    if (choices[i].name == 'q3'){ 
+    if (choices[i].name == 'q2'){ 
       if (checkInput(choices[i]) == 'yes'){
-        custom_answer += "You enjoy virtual networking events a ton.  This is a great way to increase your network circle. ";
+        custom_answer += "You enjoy virtual networking events a ton. This is a great way to increase your network circle. ";
       }
       if (checkInput(choices[i]) == 'no'){
         custom_answer += "Attending some virtual networking events is beneficial and will greatly impact your network circle. ";
       }
       if (checkInput(choices[i]) == 'maybe'){
-        custom_answer += "You sometimes attend virtual networking events.  It is a great way to increase your network. ";
+        custom_answer += "You sometimes attend virtual networking events. It is a great way to increase your network. ";
       }
     }
     // content creator
     if (choices[i].name == 'q3'){ 
       if (checkInput(choices[i]) == 'yes'){
-        custom_answer += "You are active as a content creator!  Continue to share and inspire others with your creative content because it helps others understand and learn more about your field. ";
+        custom_answer += "Our algorithm shows that you are active as a content creator!  Continue to share and inspire others with your creative content because it helps others understand and learn more about your field. ";
       }
       if (checkInput(choices[i]) == 'no'){
-        custom_answer += "Consider creating Medium blog posts or LinkedIn posts to boost your content!  This will tremendously help build your network. ";
+        custom_answer += "Our algorithm shows that you don't create a lot of content, consider creating Medium blog posts or LinkedIn posts to boost engagement! This will tremendously help build your network.";
       }
       if (checkInput(choices[i]) == 'maybe'){
-        custom_answer += "You sometimes create online content.  Consider using more social media outlets such as posting on LinkedIn, blogging, or Youtube videos to continue to optimize your content. ";
+        custom_answer += "Our algorithm shows that you only sometimes create content online. Consider using more social media outlets such as posting on LinkedIn, blogging, or Youtube videos to continue to optimize your content. ";
       }
     }
     // comments on posts
     if (choices[i].name == 'q4'){ 
       if (checkInput(choices[i]) == 'yes'){
-        custom_answer += "You regularly engage in other people’s LinkedIn posts!  This is a great way to build your connections and social network. ";
+        custom_answer += "You also regularly engage in other people’s LinkedIn posts!  This is a great way to build your connections and social network. ";
       }
       if (checkInput(choices[i]) == 'no'){
-        custom_answer += "One of the best ways to start building your connections is by reaching out to people on LinkedIn and being more engaged with people’s content.  Increase the amount of posts, comments, and likes on LinkedIn to gain a stronger social network presence. ";
+        custom_answer += "You can also start building your connections by reaching out to people on LinkedIn and being more engaged with people’s content.  Increase the amount of posts, comments, and likes on LinkedIn to gain a stronger social network presence. ";
       }
       if (checkInput(choices[i]) == 'maybe'){
-        custom_answer += "You engage on LinkedIn posts sometimes!  Consider engaging in people’s content more and also post more on your account to increase social engagement. ";
+        custom_answer += "You also occasionally engage on LinkedIn posts!  Consider engaging in people’s content more and also post more on your account to increase social engagement. ";
       }
       
     }
     // camera on or off
     if (choices[i].name == 'q5'){ 
       if (checkInput(choices[i]) == 'yes'){
-        custom_answer += 'You typically keep your camera on, which is great!  Continue to do so as it leads to more meaningful conversations with your colleagues.<br><br>';
+        custom_answer += 'Additionally, you typically keep your camera on, which is great!  Continue to do so as it leads to more meaningful conversations with your colleagues.<br><br>';
       }
       if (checkInput(choices[i]) == 'no'){
-        custom_answer += "Although keeping your camera off does not lead to more or less connections, it is important to keep your camera on during meetings since it leads to more meaningful and personable conversations.<br><br>";
+        custom_answer += "Additionally, keeping your camera off does not lead to more or less connections, but it is important to keep your camera on during meetings since it leads to more meaningful and personable conversations.<br><br>";
       }
       if (checkInput(choices[i]) == 'maybe'){
-        custom_answer += "You sometimes leave your camera on or off during virtual meetings.  Consider keeping your camera on more since it leads to more meaningful conversations with your colleagues and fosters better relationships.<br><br>";
+        custom_answer += "Additionally, you sometimes leave your camera on or off during virtual meetings.  Consider keeping your camera on more since it leads to more meaningful conversations with your colleagues and fosters better relationships.<br><br>";
       }
     }
   
@@ -131,95 +131,100 @@ function tabulateAnswers() {
 
   // Create Responses
   var response = ""
-  response += "The average person meets 3 people per day which means as of January 1st, 2020 to today, you would have met " + day*3 + " people. Since many people are currently remote, let's see how you compare to others who network: <br><br>";
+  response += "The average person meets 3 people per day which means as of January 1st, 2020 to today, you would have met " + day*3 + " people. Since many people are currently remote, let's see how you compare to others who network: <br><br>";  
+  response += 'Based on your answers ';
+
   if (max_score == 'c1'){ // Extroverted
-    response += "You're a star networker! You love to speak to people and networking is your passion.  Continue to build strong networks and relationships.<br><br>";
+    response += "you're a star networker! You love to speak to people and networking is your passion.  Continue to build strong networks and relationships.<br><br>";
   }
   if (max_score == 'c2'){ // Introverted
-    response += "You may need some help with networking!  Try to reach out to people more on LinkedIn and get to know your colleagues/ classmates.<br><br>"
+    response += "you may need some help with networking!  Try to reach out to people more on LinkedIn and get to know your colleagues/ classmates.<br><br>"
   }
   if (max_score == 'c3'){ // In Between
-    response += "Looks like you are good at networking, but you may want to expand on other ways to help build your network.<br><br>";
+    response += "it looks like you are good at networking, but you may want to expand on other ways to help build your network.<br><br>";
   }
 
+  response += custom_answer;
 
-  response += custom_answer + "<br>";
-  // response += "Based on your answers " + custom_answer + "<br>";
-  // response += "Here are some tips to improve your network: <br>";
-  // response += custom_advice + "<br>";
-  response += "Here are some people you should connect with: ";
-  response += '<br><br>';
+  response += "Here are some Data Science Thought Leaders you should connect with: ";
+  response += '<br>';
 
-  var linkedin = ['Eugene Hayden', 'Catherine Tao', 'Stephanie Moore', 'Matt Rall', 'Brian Richmond', 'Jenny Lin', 'Catherine Devine', 'Takashi Ueki', 'Laura Edell', 'Nandini Malik', 'Olga Perera', 'Charles Givre', 'Ali Bouhouch', 'Bernard Marr','Dan Becker', 'Josh Odmark', 'Sanjay Basu', 'Vin Vashishta','Angela Shen-Hsieh', 'Dr. Ganapathi Pulipaka'];
+  var linkedin = ['Darren Kaplan', 'Eugene Hayden', 'Catherine Tao', 'Stephanie Moore', 'Matt Rall', 'Brian Richmond', 'Jenny Lin', 'Catherine Devine', 'Takashi Ueki', 'Laura Edell', 'Nandini Malik', 'Olga Perera', 'Charles Givre', 'Ali Bouhouch', 'Bernard Marr','Dan Becker', 'Josh Odmark', 'Sanjay Basu', 'Vin Vashishta','Angela Shen-Hsieh', 'Dr. Ganapathi Pulipaka'];
 
-  for (i=0; i<10; i++) {
+  for (i=0; i<4; i++) {
     var string = linkedin[Math.floor(Math.random()*linkedin.length)];
     if (string == 'Eugene Hayden') {
       response += string.link("https://www.linkedin.com/in/eugenehayden/");
-      response += '<br><br>';
-    } else if (string == 'Catherine Tao') {
+      response += ', ';
+    } 
+    else if (string == 'Darren Kaplan') {
+      response += string.link("https://www.linkedin.com/in/darrenkaplan500/");
+      response += ', ';
+    }
+    else if (string == 'Catherine Tao') {
       response += string.link("https://www.linkedin.com/in/catherine-tao/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Stephanie Moore') {
       response += string.link("https://www.linkedin.com/in/stephaniegmoore1/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Matt Rall') {
       response += string.link("https://www.linkedin.com/in/matthew-rall-7b9b7511/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Brian Richmond') {
       response += string.link("https://www.linkedin.com/in/brian-richmond/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Jenny Lin') {
       response += string.link("https://www.linkedin.com/in/jenny-x-lin/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Catherine Devine') {
       response += string.link("https://www.linkedin.com/in/cmdevine/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Takashi Ueki') {
       response += string.link("https://www.linkedin.com/in/takashiueki/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Laura Edell') {
       response += string.link("https://www.linkedin.com/in/lauraerinedell/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Nandini Malik') {
       response += string.link("https://www.linkedin.com/in/nandinimalik/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Olga Perera') {
       response += string.link("https://www.linkedin.com/in/olga-k-22b7193a/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Charles Givre') {
       response += string.link("https://www.linkedin.com/in/cgivre/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Ali Bouhouch') {
       response += string.link("https://www.linkedin.com/in/ali-bouhouch-4774372/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Bernard Marr') {
       response += string.link("https://www.linkedin.com/in/bernardmarr/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Dan Becker') {
       response += string.link("https://www.linkedin.com/in/dansbecker/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Josh Odmark') {
       response += string.link("https://www.linkedin.com/in/joshuaodmark/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Sanjay Basu') {
       response += string.link("https://www.linkedin.com/in/sanjaybasu/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Vin Vashishta') {
       response += string.link("https://www.linkedin.com/in/vineetvashishta/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Angela Shen-Hsieh') {
       response += string.link("https://www.linkedin.com/in/angelashenhsieh/");
-      response += '<br><br>';
+      response += ', ';
     } else if (string == 'Dr. Ganapathi Pulipaka') {
       response += string.link("https://www.linkedin.com/in/dr-ganapathi-pulipaka-56417a2/");
-      response += '<br><br>';
+      response += ', ';
     }
 
     var idx = linkedin.indexOf(string);
     linkedin = linkedin.slice(0, idx).concat(linkedin.slice(idx + 1, linkedin.length))
   }
 
+  response = response.slice(0, response.length-2);  
   answerbox.innerHTML  = response;
 }
 
@@ -231,7 +236,11 @@ function resetAnswer() {
   function refreshPage(){ 		
     location.reload(); 		
   }
-  
   refreshPage();
 
+}
+
+function openViz() {
+  url = 'https://stephaniemoore14.github.io/covid-interactions-viz/';
+  window.open(url);
 }

@@ -37,6 +37,9 @@ body {
   #reset {
     background: red;
   }
+  #link {
+    background: gold;
+  }
   #answer {
     border: 1px dashed #ccc;
     background: #eee;
