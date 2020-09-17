@@ -39,6 +39,7 @@ body {
   }
   #link {
     background: gold;
+    color: black;
   }
   #answer {
     border: 1px dashed #ccc;
