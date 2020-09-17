@@ -1,3 +1,20 @@
+function checkAnswers() {
+  var choices = document.getElementsByTagName('input');
+  var num_answered = 0;
+  // loop through all the radio inputs
+  for (i=0; i<choices.length; i++) {
+
+    // if the radio is checked, tally values
+    if (choices[i].checked) {
+      num_answered += 1;
+    }
+  }
+  if (num_answered != 6){
+    window.alert("Please answer all questions.");
+  }
+  window.alert("test");
+};
+
 // function to calculate the result of the survey
 function tabulateAnswers() {
   // initialize variables for each choice's score
