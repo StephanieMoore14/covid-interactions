@@ -12,7 +12,6 @@ function checkAnswers() {
   if (num_answered != 6){
     window.alert("Please answer all questions.");
   }
-  window.alert("test");
 };
 
 // function to calculate the result of the survey
@@ -242,6 +241,8 @@ function tabulateAnswers() {
   }
 
   response = response.slice(0, response.length-2);  
+  response += '<br><br>';
+  response += "This is a sample output and we would love any feedback on how you'd like to see the results!".bold().fontcolor("red");
   answerbox.innerHTML  = response;
 }
 
