@@ -147,7 +147,8 @@ function tabulateAnswers() {
 
   // Create Responses
   var response = ""
-  response += "The average person meets 3 people per day which means as of January 1st, 2020 to today, you would have met " + day*3 + " people. Since many people are currently remote, let's see how you compare to others who network: <br><br>";  
+  response += "The average person meets 3 people per day".link("https://blog.adioma.com/counting-the-people-you-impact-infographic/#:~:text=On%20average%20we%20live%20for,3%20x%20365.24%20%3D%2080%2C000%20people.");
+  response += ", which means as of January 1st, 2020 to today, you would have met " + day*3 + " people. Since many people are currently remote, let's see how you compare to others who network: <br><br>";  
   response += 'Based on your answers ';
 
   if (max_score == 'c1'){ // Extroverted
