@@ -249,9 +249,7 @@ function tabulateAnswers() {
 
 
 // program the reset button --> to refresh page
-function resetAnswer() {
-  // var answerbox = document.getElementById('answer');
-  
+function resetAnswer() {  
   function refreshPage(){ 		
     location.reload(); 		
   }
